@@ -9,19 +9,40 @@ import tempfile
 import time
 
 # Load the trained Xception model
-model = timm.create_model('legacy_xception', pretrained=True)
+# model = timm.create_model('legacy_xception', pretrained=True)
+
+# # Modify the classifier to match your task (2 classes: Real/Fake)
+# model.fc = nn.Linear(model.fc.in_features, 2)
+
+# # Load the saved model weights
+# # model.load_state_dict(torch.load('./trained_models/xception_fine_tune_25-frames.pth'))
+
+# model.eval()
+
+# # Move model to GPU if available
+# # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# # device = torch.device('cpu')
+
+# model.to(device)
+
+
+# Define the device (use CPU explicitly since deployment is CPU-only)
+device = torch.device("cpu")
+
+# Load the Xception model
+model = timm.create_model("legacy_xception", pretrained=True)
 
 # Modify the classifier to match your task (2 classes: Real/Fake)
 model.fc = nn.Linear(model.fc.in_features, 2)
 
-# Load the saved model weights
-model.load_state_dict(torch.load('./trained_models/xception_fine_tune_25-frames.pth'))
+# Load only the model weights (state_dict), mapping to CPU
+model_path = "./trained_models/xception_fine_tune_25-frames.pth"
+model.load_state_dict(torch.load(model_path, map_location=device))
+
+# Set model to evaluation mode
 model.eval()
 
-# Move model to GPU if available
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-# device = torch.device('cpu')
-model = torch.load(model_path, map_location=torch.device('cpu'))
+# Move the model to CPU (this is redundant since device is already CPU, but safe)
 model.to(device)
 
 # Transform for frames
