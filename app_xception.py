@@ -15,7 +15,7 @@ model = timm.create_model('legacy_xception', pretrained=True)
 model.fc = nn.Linear(model.fc.in_features, 2)
 
 # Load the saved model weights
-model.load_state_dict(torch.load('/trained_models/xception_fine_tune_25-frames.pth'))
+model.load_state_dict(torch.load('./trained_models/xception_fine_tune_25-frames.pth'))
 model.eval()
 
 # Move model to GPU if available
