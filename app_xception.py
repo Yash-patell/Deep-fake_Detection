@@ -19,7 +19,8 @@ model.load_state_dict(torch.load('./trained_models/xception_fine_tune_25-frames.
 model.eval()
 
 # Move model to GPU if available
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cpu')
 model.to(device)
 
 # Transform for frames
