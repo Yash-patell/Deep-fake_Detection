@@ -1,7 +1,8 @@
-opencv-python
-Pillow
-streamlit
-timm
-torch
-torchvision
-
+opencv_python==4.9.0.80
+Pillow==9.4.0
+streamlit==1.32.0
+timm==1.0.15
+torch==2.2.1+cu118
+torch==2.2.0
+torchvision==0.17.1+cu118
+tqdm==4.65.0
