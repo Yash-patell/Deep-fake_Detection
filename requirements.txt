@@ -6,3 +6,4 @@ torch==2.2.1+cu118
 torch==2.2.0
 torchvision==0.17.1+cu118
 tqdm==4.65.0
+
