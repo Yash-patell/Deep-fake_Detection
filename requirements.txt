@@ -10,11 +10,11 @@
 
 numpy
 opencv-python-headless
-opencv-python
+#opencv-python
 Pillow
 streamlit
 timm
-torch
+#torch
 
 
 
