@@ -1,4 +1,4 @@
-opencv-python==4.9.0.80
+#opencv-python==4.9.0.80
 opencv-python-headless
 Pillow==9.4.0
 streamlit==1.32.0
