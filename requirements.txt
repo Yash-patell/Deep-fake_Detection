@@ -8,3 +8,13 @@
 #torchvision==0.17.1+cu118
 #tqdm==4.65.0
 
+numpy
+opencv-python-headless
+opencv-python
+Pillow
+streamlit
+timm
+torch
+
+
+
