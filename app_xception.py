@@ -83,7 +83,7 @@ def predict_video_live(video_path):
             label = "REAL" if prediction == 0 else "FAKE"
             # stframe.image(frame_rgb, caption=f"Prediction: {label} ({confidence:.2f})",     use_column_width=True)
             # frame_resized = cv2.resize(frame_rgb, (640, 480))
-            stframe.image(frame_rgb, use_column_width=True)
+            stframe.image(frame_rgb, use_container_width=True)
             sttext.markdown(f"<h3 style='text-align: center;'>Prediction:  {label} ({confidence:.2f})</h4>", unsafe_allow_html=True)
 
 
