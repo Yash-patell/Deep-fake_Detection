@@ -5,4 +5,4 @@ This project is a deep learning–based system to detect deepfake videos using a
 <br>
 
 # This code is deployed on streamlit 
-## This code is only used for deployment purpose on streamlit
+## This code is only used for deployment purposes on streamlit to view the full repository refer to : https://github.com/Yash-patell/Deep-Vision
